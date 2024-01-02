@@ -10,7 +10,7 @@ import { delay, first, take, tap } from 'rxjs';
 export class CoursesService {
 
   //Posso modificar o caminho para gerar o erro de carregamento na tela
-  private readonly API = '/assets/courses.json';
+  private readonly API = 'api/courses';
 
   constructor(private httpClient: HttpClient) { }
 

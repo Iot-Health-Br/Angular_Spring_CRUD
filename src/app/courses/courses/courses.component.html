@@ -8,6 +8,13 @@
     <div *ngIf="courses$ | async as courses; else loading">
       <table mat-table [dataSource]="courses" class="mat-elevation-z8">
 
+
+        <!-- ID Column -->
+        <ng-container matColumnDef="_id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let course"> {{course._id}} </td>
+        </ng-container>
+
         <!-- Name Column -->
         <ng-container matColumnDef="name">
           <th mat-header-cell *matHeaderCellDef> Curso </th>
@@ -21,6 +28,28 @@
             <mat-icon aria-hidden="false" aria-label="Categoria do Curso">{{course.categoria | categoria}}</mat-icon>
           </td>
         </ng-container>
+
+       <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef>
+            <button (click)="onAdd()" mat-mini-fab color="accent" aria-label="Adicionar um curso !">
+              <mat-icon>add</mat-icon>
+            </button>
+          </mat-header-cell>
+
+        <!--Quando quero customizar o botão uso o Mat-header-cell e mat-cell-->
+          <mat-cell *matCellDef="let course">
+            <button mat-icon-button color="secondary" aria-label="Editar Curso !">
+              <mat-icon>edit</mat-icon>
+            </button>
+
+            <button mat-icon-button color="warning" aria-label="Remover Curso !">
+              <mat-icon>delete</mat-icon>
+            </button>
+
+          </mat-cell>
+
+        </ng-container>]
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
