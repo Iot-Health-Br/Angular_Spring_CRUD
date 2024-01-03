@@ -1,1 +1,30 @@
-<p>Mudando de Tela !</p>
+  <mat-card>
+      <mat-card-content>
+        <mat-toolbar color="primary">Detalhes do Curso</mat-toolbar>
+        <!--Faz o vinculo do HTML com o grupo do formulário form-->
+        <form [formGroup]="form">
+          <mat-form-field class="full-width">
+            <!--Faz a vinculação do campo com a variavel name do grupo do formulário do form-->
+            <input matInput placeholder="Nome" formControlName="name">
+          </mat-form-field>
+
+          <mat-form-field class="full-width">
+            <mat-label>Categoria</mat-label>
+              <mat-select formControlName="categoria">
+                <mat-option  value = "null"></mat-option>
+                <mat-option  value = "front-end">Front-end</mat-option>
+                <mat-option  value = "back-end">Back-end</mat-option>
+              </mat-select >
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+
+    <!--Botões do formulário-->
+    <mat-card-actions>
+      <!--mat-raised-button dá estilo ao botão-->
+      <button  mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+      <button  mat-raised-button (click)="onCancel()">Cancelar</button>
+    </mat-card-actions>
+  </mat-card>
+
+

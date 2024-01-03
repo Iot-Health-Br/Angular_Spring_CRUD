@@ -1,0 +1,26 @@
+mat-card{
+  //Tamanho do card na tela
+  max-width: 80%;
+  //Tamanho da margem, duas vezes o tamanho da margem padrão
+  margin: 2em auto;
+  //Alinha o texto no centro
+  text-align: center;
+}
+mat-card-actions{
+  justify-content: center;
+}
+mat-card-actions button{
+  margin: 10px;
+}
+
+//Tamanho máximo do formulário
+.full-width{
+  width: 100%;
+}
+
+//Tamanho minimo do formulário
+.min-width{
+  width: 100%;
+  min-width: 150px;
+}
+
