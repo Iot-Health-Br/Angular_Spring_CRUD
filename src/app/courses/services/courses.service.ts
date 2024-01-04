@@ -25,4 +25,12 @@ export class CoursesService {
       tap(courses => console.log(courses))
     );
   }
+  //Record recebe uma interface do tipo curso
+  save(record: Course){
+    console.log(record);
+    //Puxou uma informação do servidor e via get
+    //Para salvar a informação usamos o http
+    //Retorno um observable de curso
+    return this.httpClient.post<Course>(this.API,record).pipe(first());
+  }
 }
