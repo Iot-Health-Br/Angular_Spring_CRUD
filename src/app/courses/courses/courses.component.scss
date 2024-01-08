@@ -1,5 +1,14 @@
-table {
-  width: 100%;
+mat-card{
+  max-width: 80%;
+  margin: 2em auto;
+  text-align: center;
+}
+
+//Estiliza a coluna
+.column-flex{
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
 }
 
 //Scss do Spinner de carregamento dos cursos.

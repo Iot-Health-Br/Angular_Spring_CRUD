@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, NonNullableFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { error } from 'console';
 
@@ -16,13 +16,13 @@ export class CourseFormComponent implements OnInit{
   form: FormGroup;
 
   //Faz a injeção do informe build no construtor
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: NonNullableFormBuilder,
     private service: CoursesService,
     private snackBar: MatSnackBar,
     private location: Location){
     this.form = this.formBuilder.group({
-      name:[null],
-      categoria:[null]
+      name:[''],
+      categoria:['']
     });
   }
 
@@ -44,6 +44,7 @@ export class CourseFormComponent implements OnInit{
   }
 
   private onSuccess(){
+    //Apresenta a mensagem de salvo e volta para a tela inicial
     this.snackBar.open('Curso salvo com sucesso !','',{duration:5000});
     this.onCancel();
   }

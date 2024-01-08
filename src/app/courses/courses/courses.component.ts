@@ -1,7 +1,7 @@
 import { Routes, RouterModule, Router, ActivatedRoute } from '@angular/router';
 import { ErrorDialogComponent } from './../../shared/components/error-dialog/error-dialog.component';
 import { CoursesService } from './../services/courses.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Course } from '../Model/course';
 import { Observable, catchError } from 'rxjs';
 import { error } from 'console';
@@ -12,11 +12,12 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './courses.component.html',
   styleUrl: './courses.component.scss',
 })
-export class CoursesComponent {
+
+// export class CoursesComponent
+export class CoursesComponent{
 
   //courses$ e um observable
   courses$: Observable<Course[]>;
-  displayedColumns=['name','categoria','actions'];//Colocar a coluna id para aparecer
 
   constructor(
     private CoursesService: CoursesService,
