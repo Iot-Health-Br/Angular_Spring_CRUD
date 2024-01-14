@@ -45,8 +45,6 @@ export class CoursesComponent implements OnInit{
   ngOnInit():void{}
 
   onAdd(){
-    // A rota selecionada e relativa a rota que já estou, acresecenta new e abre a outra rota.
-    //console.log('onAdd');
     this.router.navigate(['new'],{relativeTo: this.route});
   }
 }
