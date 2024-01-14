@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
-import { Course } from '../Model/course';
+import { Course } from '../../Model/course';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EventEmitter } from '@angular/core';
 
