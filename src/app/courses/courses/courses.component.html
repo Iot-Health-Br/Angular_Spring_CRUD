@@ -9,7 +9,10 @@
 
         <!--Vai receber informação de outro componente "Course-List"-->
         <!--Se não tiver dado apresenta o spinner-->
-        <app-courses-list *ngIf="courses$ | async as courses; else loading"[courses]="courses"></app-courses-list>
+        <app-courses-list *ngIf="courses$ | async as courses; else loading"
+        [courses]="courses"
+        (add)="onAdd()"
+        ></app-courses-list>
 
         <ng-template #loading>
           <div class="loading-spinner">

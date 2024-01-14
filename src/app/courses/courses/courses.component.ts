@@ -14,7 +14,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 
 // export class CoursesComponent
-export class CoursesComponent{
+export class CoursesComponent implements OnInit{
 
   //courses$ e um observable
   courses$: Observable<Course[]>;
@@ -42,9 +42,7 @@ export class CoursesComponent{
     });
   }
 
-  ngOnInit():void{
-
-  }
+  ngOnInit():void{}
 
   onAdd(){
     // A rota selecionada e relativa a rota que já estou, acresecenta new e abre a outra rota.
