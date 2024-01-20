@@ -15,6 +15,7 @@ export class CoursesListComponent implements OnInit{
   //Decorator Input
   @Input() courses: Course[] = [];
   @Output() add = new EventEmitter(false);
+  @Output() edit = new EventEmitter(false);
 
   //Não faço a mudança neste objeto, apenas o leio
   readonly displayedColumns=['name','categoria','actions'];//Colocar a coluna id para aparecer
@@ -26,6 +27,8 @@ export class CoursesListComponent implements OnInit{
   onAdd(){
     this.add.emit(true);
   }
-
+  onEdit(course: Course){
+    this.edit.emit(course);
+  }
 }
 

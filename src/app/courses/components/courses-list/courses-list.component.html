@@ -32,7 +32,7 @@
 
   <!--Quando quero customizar o botão uso o Mat-header-cell e mat-cell-->
     <mat-cell *matCellDef="let course" class="action-column">
-      <button mat-icon-button color="secondary" aria-label="Editar Curso !">
+      <button (click)="onEdit(course)" mat-icon-button color="secondary" aria-label="Editar Curso !">
         <mat-icon>edit</mat-icon>
       </button>
 
