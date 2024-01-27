@@ -33,11 +33,11 @@
   <!--Quando quero customizar o botão uso o Mat-header-cell e mat-cell-->
     <mat-cell *matCellDef="let course" class="action-column">
       <button (click)="onEdit(course)" mat-icon-button color="secondary" aria-label="Editar Curso !">
-        <mat-icon>edit</mat-icon>
+        <mat-icon style="color: #FFFF00;">edit</mat-icon>
       </button>
 
-      <button (click)="onDelete(course)" mat-icon-button color="warning" aria-label="Remover Curso !">
-        <mat-icon>delete</mat-icon>
+      <button (click)="onDelete(course)" mat-icon-button aria-label="Remover Curso !">
+        <mat-icon style="color: #FF0000;">delete</mat-icon>
       </button>
     </mat-cell>
   </ng-container>]
